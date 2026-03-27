@@ -12,6 +12,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alex Olson | Contractor Websites" />
     <meta name="twitter:description" content="Professional websites for contractors in Winston-Salem, NC. Get found online and grow your business." />
+    <script defer data-domain="contractorwebstudio.com" src="https://plausible.io/js/script.js"></script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://contractorwebstudio.com/" />
     <title>Alex Olson | Contractor Websites - Winston-Salem, NC</title>
@@ -22,8 +23,8 @@
       "name": "Alex Olson - Contractor Web Studio",
       "description": "Professional website design and development for contractors and construction companies in Winston-Salem, NC and the Triad area.",
       "url": "https://contractorwebstudio.com",
-      "telephone": "(336) 555-0123",
-      "email": "alex@contractorwebstudio.com",
+      "telephone": "(317) 590-1373",
+      "email": "aolson078@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Winston-Salem",
@@ -40,11 +41,15 @@
         { "@type": "City", "name": "Greensboro" },
         { "@type": "City", "name": "High Point" },
         { "@type": "City", "name": "Kernersville" },
-        { "@type": "City", "name": "Clemmons" }
+        { "@type": "City", "name": "Clemmons" },
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Place", "name": "Worldwide (Remote)" }
       ],
       "priceRange": "$800 - $6,000",
       "openingHours": "Mo-Fr 09:00-17:00",
-      "sameAs": [],
+      "sameAs": [
+        "https://g.page/contractor-web-studio"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Contractor Website Packages",
@@ -59,14 +64,14 @@
           {
             "@type": "Offer",
             "name": "Never Miss a Lead",
-            "description": "4-5 page website with instant SMS/email alerts, CRM integration, and review system",
+            "description": "4-5 page website with email and Slack/Discord alerts, Mailchimp lead tagging, and review-request guidance",
             "price": "2000",
             "priceCurrency": "USD"
           },
           {
             "@type": "Offer",
             "name": "Grow on Autopilot",
-            "description": "6+ page website with automated follow-ups, review reminders, and competitive analysis",
+            "description": "6+ page website with a documented follow-up roadmap, review reminder templates, and competitive analysis",
             "price": "4000",
             "priceCurrency": "USD"
           }
@@ -77,6 +82,36 @@
   </head>
   <body>
     <div id="root"></div>
+    <div hidden aria-hidden="true">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="name" value="" />
+        <input type="email" name="email" value="" />
+        <input type="tel" name="phone" value="" />
+        <input type="text" name="business" value="" />
+        <input type="text" name="service" value="" />
+        <input type="text" name="addons" value="" />
+        <input type="text" name="lead_source" value="" />
+        <input type="text" name="campaign" value="" />
+        <input type="text" name="trade" value="" />
+        <input type="text" name="city" value="" />
+        <input type="text" name="partner_name" value="" />
+        <input type="text" name="utm_source" value="" />
+        <input type="text" name="utm_medium" value="" />
+        <input type="text" name="utm_campaign" value="" />
+        <input type="text" name="utm_content" value="" />
+        <input type="text" name="first_touch_path" value="" />
+        <input type="text" name="latest_path" value="" />
+        <input type="text" name="stage" value="" />
+        <textarea name="message"></textarea>
+        <input type="text" name="bot-field" value="" />
+      </form>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

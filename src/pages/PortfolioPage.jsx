@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import MockupBrowser from '../components/MockupBrowser';
+import portfolioData from '../data/portfolioData';
 
 function PortfolioPage() {
+  useEffect(() => {
+    document.title = 'Portfolio & Case Studies | Contractor Web Studio';
+  }, []);
+
   return (
     <>
       {/* ── Page Header ── */}
@@ -17,47 +24,33 @@ function PortfolioPage() {
         </div>
       </section>
 
-      {/* ── Wolf Mountain Case Study ── */}
+      {/* ── Wolf Lake Masonry Case Study ── */}
       <section className="section section--dark">
         <div className="container">
           <div className="case-study">
             <div className="reveal-up">
-              <div
+              <img
+                src="/portfolio/wolf-lake/Landing Page.png"
+                alt="Wolf Lake Masonry Inc. website - homepage"
                 className="case-study__image"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  minHeight: '360px',
-                  background: 'var(--surface-raised)',
-                  border: '1px solid var(--border-strong)',
-                  borderRadius: 'var(--radius-lg)',
-                  color: 'var(--text-muted)',
-                  fontSize: '0.9rem',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.04em',
-                  textAlign: 'center',
-                  padding: '2rem',
-                }}
-              >
-                Wolf Lake Masonry Site Screenshot
-              </div>
+                loading="lazy"
+              />
             </div>
 
             <div className="case-study__content reveal-up stagger-1">
               <p className="case-study__tag">
-                MASONRY CONTRACTOR &bull; WINSTON-SALEM, NC
+                MASONRY & HARDSCAPING &bull; WINSTON-SALEM, NC
               </p>
-              <h2 className="case-study__title">WOLF LAKE MASONRY</h2>
+              <h2 className="case-study__title">WOLF LAKE MASONRY INC.</h2>
               <p className="case-study__desc">
-                Wolf Lake Masonry needed a professional online presence that
-                matched the quality of their stonework. I built them a fast,
-                mobile-first React site with three pages (Home, About, and
-                Contact) designed to convert visitors into leads. The contact
-                form triggers instant email and SMS alerts so they never miss an
-                inquiry. On top of the site, I set up a lead-routing automation
-                pipeline and a review generation system to help them build their
-                Google reputation after every completed job.
+                Wolf Lake Masonry Inc. is a family-owned masonry and hardscaping
+                business serving Winston-Salem since 1992. They needed a modern
+                web presence to showcase their craftsmanship and generate quote
+                requests. I designed and built the site from scratch using React
+                with a custom "Timberstone" CSS design system, a dark
+                forest/gold/stone palette that reinforces their rugged
+                reliability. Since launch, it has become their primary source of
+                new project inquiries.
               </p>
 
               <h3
@@ -81,12 +74,13 @@ function PortfolioPage() {
                 }}
               >
                 {[
-                  '3-page React website (Home, About, Contact)',
-                  'Contact form with instant email + SMS alerts',
-                  'Lead-routing automation (form → CRM → notifications)',
-                  'Review generation system (automated Google review requests)',
-                  'SEO optimization with LocalBusiness JSON-LD schema',
-                  'Client documentation package with plain-English guides',
+                  '4-page React website (Home, Projects, Contact, Privacy)',
+                  'Custom "Timberstone" design system with forest/gold/stone palette',
+                  'Scroll-triggered animated counters (experience, BBB rating, projects)',
+                  'Auto-rotating testimonial carousel with crossfade transitions',
+                  'Netlify Forms with honeypot spam filtering',
+                  'Image optimization pipeline (Sharp + WebP/AVIF)',
+                  'SEO essentials (Open Graph, Twitter Cards, sitemap, semantic HTML)',
                 ].map((item, i) => (
                   <li
                     key={i}
@@ -116,20 +110,48 @@ function PortfolioPage() {
 
               <div className="case-study__stats">
                 <div>
-                  <p className="case-study__stat-number">3</p>
+                  <p className="case-study__stat-number">4</p>
                   <p className="case-study__stat-label">Pages</p>
                 </div>
                 <div>
-                  <p className="case-study__stat-number">2 WK</p>
-                  <p className="case-study__stat-label">Build Time</p>
+                  <p className="case-study__stat-number">7</p>
+                  <p className="case-study__stat-label">Project Showcases</p>
                 </div>
                 <div>
-                  <p className="case-study__stat-number">100%</p>
-                  <p className="case-study__stat-label">Mobile-First</p>
+                  <p className="case-study__stat-number">A+</p>
+                  <p className="case-study__stat-label">BBB Rating</p>
                 </div>
                 <div>
-                  <p className="case-study__stat-number">Netlify</p>
-                  <p className="case-study__stat-label">Hosting</p>
+                  <p className="case-study__stat-number">1992</p>
+                  <p className="case-study__stat-label">Est.</p>
+                </div>
+              </div>
+
+              <h3
+                style={{
+                  fontSize: '0.85rem',
+                  color: 'var(--accent)',
+                  marginBottom: '0.75rem',
+                  fontFamily: 'var(--font-mono)',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  fontWeight: 500,
+                }}
+              >
+                Results
+              </h3>
+              <div className="case-study__stats" style={{ marginBottom: '2rem' }}>
+                <div>
+                  <p className="case-study__stat-number">7</p>
+                  <p className="case-study__stat-label">Days to First Lead</p>
+                </div>
+                <div>
+                  <p className="case-study__stat-number">&lt;2s</p>
+                  <p className="case-study__stat-label">Page Load</p>
+                </div>
+                <div>
+                  <p className="case-study__stat-number">5-Star</p>
+                  <p className="case-study__stat-label">Google Reviews in Month 1</p>
                 </div>
               </div>
 
@@ -138,9 +160,10 @@ function PortfolioPage() {
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: '0.5rem',
+                  marginBottom: '1.5rem',
                 }}
               >
-                {['React', 'Vite', 'Netlify Forms', 'SMS Alerts'].map(
+                {['React 18', 'Vite 5', 'Netlify Forms', 'Sharp', 'GA4'].map(
                   (tech, i) => (
                     <span
                       key={i}
@@ -162,7 +185,141 @@ function PortfolioPage() {
                   )
                 )}
               </div>
+
+              <a
+                href="https://www.wolflakemasonryinc.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--primary"
+              >
+                Visit Live Site
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Wolf Lake Screenshots ── */}
+      <section className="section">
+        <div className="container">
+          <div className="section__header section__header--center reveal-up">
+            <span className="section__eyebrow">SCREENSHOTS</span>
+            <h2 className="section__title">WOLF LAKE MASONRY IN ACTION</h2>
+          </div>
+          <div className="screenshot-grid screenshot-grid--wide">
+            <div className="screenshot-card reveal-up stagger-1">
+              <img
+                src="/portfolio/wolf-lake/HomePage2.png"
+                alt="Wolf Lake Masonry - Stats counters and services"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Stats & Services</p>
+            </div>
+            <div className="screenshot-card reveal-up stagger-2">
+              <img
+                src="/portfolio/wolf-lake/HomePage3.png"
+                alt="Wolf Lake Masonry - Testimonial carousel"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Testimonials & CTA</p>
+            </div>
+            <div className="screenshot-card reveal-up stagger-1">
+              <img
+                src="/portfolio/wolf-lake/ProjectPage1.png"
+                alt="Wolf Lake Masonry - Projects gallery"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Projects Gallery</p>
+            </div>
+            <div className="screenshot-card reveal-up stagger-2">
+              <img
+                src="/portfolio/wolf-lake/ProjectPage2.png"
+                alt="Wolf Lake Masonry - More projects"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Project Showcase</p>
+            </div>
+            <div className="screenshot-card reveal-up stagger-1">
+              <img
+                src="/portfolio/wolf-lake/ContactPage.png"
+                alt="Wolf Lake Masonry - Contact form"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Contact Page</p>
+            </div>
+            <div className="screenshot-card reveal-up stagger-2">
+              <img
+                src="/portfolio/wolf-lake/HomePage4.png"
+                alt="Wolf Lake Masonry - Footer"
+                loading="lazy"
+              />
+              <p className="screenshot-card__label">Footer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonial ── */}
+      <section className="testi-section">
+        <div className="container reveal-up">
+          <span className="testi__mark">"</span>
+          <blockquote className="testi-quote">
+            Alex built us a site that actually looks like our work. Solid, clean,
+            and professional. We started getting calls the first week it went live.
+          </blockquote>
+          <div className="testi__rule" />
+          <p className="testi-attr">Wolf Lake Masonry</p>
+        </div>
+      </section>
+
+      {/* ── More Projects ── */}
+      <section className="section">
+        <div className="container">
+          <div className="section__header section__header--center reveal-up">
+            <span className="section__eyebrow">MORE PROJECTS</span>
+            <h2 className="section__title">RECENT BUILDS</h2>
+            <p className="section__desc">
+              Every project is custom-built for the trade. Here are a few more
+              contractors I've helped get online.
+            </p>
+          </div>
+
+          <div className="portfolio-grid">
+            {portfolioData
+              .filter((p) => p.slug !== 'wolf-lake-masonry')
+              .map((project, i) => (
+                <div
+                  key={project.slug}
+                  className={`portfolio-card reveal-up stagger-${(i % 3) + 1}`}
+                >
+                  <div className="portfolio-card__mockup">
+                    {project.cardImage ? (
+                      <img
+                        src={project.cardImage}
+                        alt={project.cardImageAlt || `${project.name} website preview`}
+                        className="portfolio-card__image"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <MockupBrowser variant={project.mockupVariant} />
+                    )}
+                  </div>
+                  <div className="portfolio-card__body">
+                    <p className="portfolio-card__trade">
+                      {project.trade.toUpperCase()} &bull; {project.location.toUpperCase()}
+                    </p>
+                    <h3 className="portfolio-card__name">{project.name}</h3>
+                    <p className="portfolio-card__desc">{project.description}</p>
+                    <div className="portfolio-card__tags">
+                      {project.techTags.map((tag, j) => (
+                        <span key={j} className="portfolio-card__tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>
@@ -194,7 +351,7 @@ function PortfolioPage() {
               },
               {
                 title: 'Contact Form with Instant Alerts',
-                desc: 'Every lead hits your inbox and phone the moment it comes in. Email and SMS notifications so you never miss a job.',
+                desc: 'Every lead hits your inbox and Slack/Discord the moment it comes in. Email and webhook notifications so you never miss a job.',
                 icon: (
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />

@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function AboutPage() {
+  useEffect(() => {
+    document.title = 'About Alex Olson | Contractor Web Studio';
+  }, []);
+
   return (
     <>
       {/* ── Page Header ── */}
@@ -39,24 +44,11 @@ function AboutPage() {
             </div>
 
             <div className="reveal-up stagger-1">
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  minHeight: '360px',
-                  background: 'var(--surface-raised)',
-                  border: '1px solid var(--border-strong)',
-                  borderRadius: 'var(--radius-lg)',
-                  color: 'var(--text-muted)',
-                  fontSize: '0.9rem',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.04em',
-                  textAlign: 'center',
-                  padding: '2rem',
-                }}
-              >
-                Photo of Alex
+              <div className="about-portrait">
+                <div className="about-portrait__monogram">
+                  <div className="about-portrait__letter">A</div>
+                  <div className="about-portrait__label">Web Developer</div>
+                </div>
               </div>
             </div>
           </div>

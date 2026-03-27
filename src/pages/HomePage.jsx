@@ -1,7 +1,34 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import MockupBrowser from '../components/MockupBrowser';
+import testimonials from '../data/testimonials';
+import { buildTrackedContactPath } from '../utils/leadAttribution';
 
 function HomePage() {
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const heroQuoteHref = buildTrackedContactPath({
+    lead_source: 'homepage',
+    campaign: 'home_hero_quote',
+  });
+  const footerQuoteHref = buildTrackedContactPath({
+    lead_source: 'homepage',
+    campaign: 'home_footer_quote',
+  });
+
+  const nextTestimonial = useCallback(() => {
+    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+  }, []);
+
+  useEffect(() => {
+    document.title = 'Contractor Websites Starting at $800 | Contractor Web Studio';
+  }, []);
+
+  // Auto-rotate testimonials every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(nextTestimonial, 6000);
+    return () => clearInterval(interval);
+  }, [nextTestimonial]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -38,27 +65,14 @@ function HomePage() {
               you're handing jobs to the competition.
             </p>
             <div className="hero__cta">
-              <Link to="/contact" className="btn btn--primary">Get a Free Quote</Link>
+              <Link to={heroQuoteHref} className="btn btn--primary">Get a Free Quote</Link>
               <Link to="/portfolio" className="btn btn--outline">See My Work</Link>
             </div>
           </div>
 
           <div className="hero__visual">
-            <div
-              className="hero__mockup"
-              style={{
-                aspectRatio: '4 / 3',
-                background: 'var(--surface)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-muted)',
-                fontSize: '0.9rem',
-                fontFamily: 'var(--font-mono)',
-                letterSpacing: '0.04em',
-              }}
-            >
-              Site mockup
+            <div className="hero__mockup">
+              <MockupBrowser variant="contractor" />
             </div>
           </div>
         </div>
@@ -85,6 +99,17 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Trust Badges ── */}
+      <div className="trust-badges">
+        <div className="container">
+          <div className="trust-badges__inner">
+            <span className="trust-badges__item">100% Custom Code</span>
+            <span className="trust-badges__item">Google Business Profile Included</span>
+            <span className="trust-badges__item">30-Day Support</span>
+          </div>
+        </div>
+      </div>
 
       {/* ── Problem Section ── */}
       <section className="section section--dark">
@@ -131,22 +156,22 @@ function HomePage() {
               </div>
               <h3>Get Found Online</h3>
               <p className="svc-card__desc">
-                $800 – $1,500 &middot; A clean 3-page site with a contact form and
+                $800 - $1,500 &middot; A clean 3-page site with a contact form and
                 basic SEO so customers can actually find you on Google.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="svc-card reveal-up stagger-2">
-              <div className="svc-card__icon">
+              <div className="svc-card reveal-up stagger-2">
+                <div className="svc-card__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
               </div>
               <h3>Never Miss a Lead</h3>
               <p className="svc-card__desc">
-                $2,000 – $3,500 &middot; 4-5 pages with instant SMS + email
-                alerts on every inquiry and an automated review request system.
+                $2,000 - $3,500 &middot; 4-5 pages with instant email and Slack/Discord
+                alerts on every inquiry and a review-request checklist you can follow.
               </p>
             </div>
 
@@ -159,7 +184,7 @@ function HomePage() {
               </div>
               <h3>Grow on Autopilot</h3>
               <p className="svc-card__desc">
-                $4,000 – $6,000 &middot; 6+ pages with automated follow-ups,
+                $4,000 - $6,000 &middot; 6+ pages with a documented follow-up roadmap,
                 competitive analysis, and a full lead-capture pipeline.
               </p>
             </div>
@@ -172,44 +197,34 @@ function HomePage() {
         <div className="container">
           <div className="case-study">
             <div className="reveal-up">
-              <div
+              <img
+                src="/portfolio/wolf-lake/Landing Page.png"
+                alt="Wolf Lake Masonry Inc. website"
                 className="case-study__image"
-                style={{
-                  aspectRatio: '16 / 10',
-                  background: 'var(--surface)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-muted)',
-                  fontSize: '0.85rem',
-                  fontFamily: 'var(--font-mono)',
-                  letterSpacing: '0.04em',
-                }}
-              >
-                Project screenshot
-              </div>
+                loading="lazy"
+              />
             </div>
 
             <div className="case-study__content reveal-up">
               <p className="case-study__tag">FEATURED PROJECT</p>
-              <h2 className="case-study__title">WOLF LAKE MASONRY</h2>
+              <h2 className="case-study__title">WOLF LAKE MASONRY INC.</h2>
               <p className="case-study__desc">
-                A fully custom, mobile-first website built for a masonry
-                contractor in Winston-Salem, NC. Designed to convert visitors
-                into phone calls and quote requests from day one.
+                A fully custom React website with a "Timberstone" design system
+                for a family-owned masonry &amp; hardscaping company in
+                Winston-Salem, NC. Now their primary source of new project inquiries.
               </p>
               <div className="case-study__stats">
                 <div>
-                  <div className="case-study__stat-number">3</div>
+                  <div className="case-study__stat-number">4</div>
                   <div className="case-study__stat-label">Pages</div>
                 </div>
                 <div>
-                  <div className="case-study__stat-number">2 Wk</div>
-                  <div className="case-study__stat-label">Delivery</div>
+                  <div className="case-study__stat-number">7</div>
+                  <div className="case-study__stat-label">Projects</div>
                 </div>
                 <div>
-                  <div className="case-study__stat-number">100%</div>
-                  <div className="case-study__stat-label">Mobile-First</div>
+                  <div className="case-study__stat-number">A+</div>
+                  <div className="case-study__stat-label">BBB Rating</div>
                 </div>
               </div>
               <Link to="/portfolio" className="btn btn--primary">View Project</Link>
@@ -251,16 +266,34 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonial ── */}
+      {/* ── Testimonials Carousel ── */}
       <section className="testi-section">
         <div className="container reveal-up">
-          <span className="testi__mark">"</span>
-          <blockquote className="testi-quote">
-            Alex built us a site that actually looks like our work. Solid, clean,
-            and professional. We started getting calls the first week it went live.
-          </blockquote>
-          <div className="testi__rule" />
-          <p className="testi-attr">Wolf Lake Masonry - Winston-Salem, NC</p>
+          <div className="testi-carousel">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className={`testi-carousel__slide ${i === activeTestimonial ? 'testi-carousel__slide--active' : ''}`}
+              >
+                <span className="testi__mark">"</span>
+                <blockquote className="testi-quote">{t.quote}</blockquote>
+                <div className="testi__rule" />
+                <p className="testi-attr">
+                  {t.name} - {t.location}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="testi-carousel__dots">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                className={`testi-carousel__dot ${i === activeTestimonial ? 'testi-carousel__dot--active' : ''}`}
+                onClick={() => setActiveTestimonial(i)}
+                aria-label={`View testimonial ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -274,8 +307,8 @@ function HomePage() {
             conversation.
           </p>
           <div className="cta-btns">
-            <Link to="/contact" className="btn btn--primary">Get a Free Quote</Link>
-            <a href="tel:+13365551234" className="btn btn--outline">Call Me Directly</a>
+            <Link to={footerQuoteHref} className="btn btn--primary">Get a Free Quote</Link>
+            <a href="tel:+13175901373" className="btn btn--outline">Call Me Directly</a>
           </div>
         </div>
       </section>

@@ -74,8 +74,8 @@ function TermsPage() {
         <h2>Contact Us</h2>
         <p>
           If you have questions about these terms, please contact us at{' '}
-          <a href="mailto:alex@contractorwebstudio.com" style={{ color: 'var(--accent)' }}>
-            alex@contractorwebstudio.com
+          <a href="mailto:aolson078@gmail.com" style={{ color: 'var(--accent)' }}>
+            aolson078@gmail.com
           </a>.
         </p>
       </div>

@@ -5,8 +5,16 @@ import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import ThankYouPage from './pages/ThankYouPage';
+import PaymentSuccessPage from './pages/PaymentSuccessPage';
+import AdminPage from './pages/AdminPage';
+import LandingPage from './pages/LandingPage';
+import landingPages from './data/landingPages';
+import { captureLeadAttribution } from './utils/leadAttribution';
 
 // Floating Action Button Component
 const FloatingActionButton = () => {
@@ -79,6 +87,10 @@ function App() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    captureLeadAttribution(location);
+  }, [location]);
+
   // Initialize scroll reveal observer
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -124,6 +136,7 @@ function App() {
             <NavLink to="/" end>Home</NavLink>
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/portfolio">Portfolio</NavLink>
+            <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contact">Contact</NavLink>
           </nav>
@@ -135,10 +148,22 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/payment-success" element={<PaymentSuccessPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          {landingPages.map((page) => (
+            <Route
+              key={page.slug}
+              path={page.route}
+              element={<LandingPage slug={page.slug} />}
+            />
+          ))}
           <Route path="*" element={
             <section className="section" style={{ paddingTop: '10rem', textAlign: 'center' }}>
               <div className="container">
@@ -170,6 +195,7 @@ function App() {
                 <li><NavLink to="/">Home</NavLink></li>
                 <li><NavLink to="/services">Services</NavLink></li>
                 <li><NavLink to="/portfolio">Portfolio</NavLink></li>
+                <li><NavLink to="/blog">Blog</NavLink></li>
                 <li><NavLink to="/about">About</NavLink></li>
                 <li><NavLink to="/contact">Contact</NavLink></li>
                 <li><NavLink to="/privacy">Privacy</NavLink></li>
@@ -179,9 +205,9 @@ function App() {
             <div className="footer__column">
               <h4 className="footer__column-title">Contact</h4>
               <ul className="footer__links">
-                <li>(555) 123-4567</li>
-                <li>alex@contractorwebsites.com</li>
-                <li>Minneapolis, MN</li>
+                <li><a href="tel:+13175901373">(317) 590-1373</a></li>
+                <li><a href="mailto:aolson078@gmail.com">aolson078@gmail.com</a></li>
+                <li>Winston-Salem, NC</li>
               </ul>
             </div>
           </div>

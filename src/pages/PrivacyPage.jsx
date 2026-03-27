@@ -53,11 +53,12 @@ function PrivacyPage() {
             through their platform.
           </li>
           <li>
-            <strong>Google Analytics</strong> - We may use Google Analytics to
-            understand how visitors interact with our website. This service
-            collects anonymous usage data such as pages visited and time on
-            site. You can opt out by using a browser extension or disabling
-            JavaScript.
+            <strong>Plausible Analytics</strong> - We use Plausible Analytics, a
+            privacy-friendly, cookie-free analytics tool, to understand how
+            visitors interact with our website. Plausible does not use cookies,
+            does not collect personal data, and is fully compliant with GDPR,
+            CCPA, and PECR. All data is aggregated and no individual visitors
+            can be identified.
           </li>
         </ul>
 
@@ -78,8 +79,8 @@ function PrivacyPage() {
         <p>
           If you have questions about this privacy policy or how your data is
           handled, please contact us at{' '}
-          <a href="mailto:alex@contractorwebstudio.com" style={{ color: 'var(--accent)' }}>
-            alex@contractorwebstudio.com
+          <a href="mailto:aolson078@gmail.com" style={{ color: 'var(--accent)' }}>
+            aolson078@gmail.com
           </a>.
         </p>
       </div>

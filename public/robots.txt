@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /thank-you
+Disallow: /payment-success
 
 Sitemap: https://contractorwebstudio.com/sitemap.xml

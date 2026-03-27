@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Content"
+  short_description: "Create social posts, calendars, and repurposing plans"
+  default_prompt: "Use $social-content to draft a cross-platform content plan and publish-ready posts for my audience."
