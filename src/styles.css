@@ -1494,6 +1494,176 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
 }
 
+/* ── Admin Toolbar ── */
+.admin-toolbar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-toolbar__btn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  border: 1px solid var(--accent-border);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.admin-toolbar__btn:hover {
+  background: var(--accent-glow);
+}
+
+.admin-toolbar__btn--active {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+/* ── Admin Metrics ── */
+.admin-metrics {
+  margin-bottom: 2rem;
+}
+
+.admin-metrics__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-metrics__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.admin-metrics__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.admin-metrics__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.admin-metrics__breakdowns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.admin-breakdown {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.admin-breakdown__title {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.admin-breakdown__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.admin-breakdown__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-breakdown__key {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.admin-breakdown__count {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--cream);
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+/* ── Admin Filters ── */
+.admin-filters {
+  margin-bottom: 1.25rem;
+}
+
+.admin-filters__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.admin-filter__select {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23607090'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.admin-filter__select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.admin-filters__clear {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.admin-filters__clear:hover {
+  color: var(--accent);
+}
+
 /* =========================================
    PORTFOLIO GRID
    ========================================= */
