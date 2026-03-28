@@ -13,7 +13,9 @@ import ThankYouPage from './pages/ThankYouPage';
 import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import AdminPage from './pages/AdminPage';
 import LandingPage from './pages/LandingPage';
+import AuditPage from './pages/AuditPage';
 import landingPages from './data/landingPages';
+import audits from './data/auditTemplate';
 import { captureLeadAttribution, buildTrackedContactPath } from './utils/leadAttribution';
 
 // Floating Action Button Component
@@ -167,6 +169,13 @@ function App() {
               key={page.slug}
               path={page.route}
               element={<LandingPage slug={page.slug} />}
+            />
+          ))}
+          {audits.map((audit) => (
+            <Route
+              key={audit.slug}
+              path={`/audit/${audit.slug}`}
+              element={<AuditPage slug={audit.slug} />}
             />
           ))}
           <Route path="*" element={
