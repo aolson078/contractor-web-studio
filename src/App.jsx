@@ -14,7 +14,7 @@ import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import AdminPage from './pages/AdminPage';
 import LandingPage from './pages/LandingPage';
 import landingPages from './data/landingPages';
-import { captureLeadAttribution } from './utils/leadAttribution';
+import { captureLeadAttribution, buildTrackedContactPath } from './utils/leadAttribution';
 
 // Floating Action Button Component
 const FloatingActionButton = () => {
@@ -34,9 +34,14 @@ const FloatingActionButton = () => {
     return null;
   }
 
+  const fabHref = buildTrackedContactPath({
+    lead_source: 'fab',
+    campaign: 'floating_action_button',
+  });
+
   return (
     <Link
-      to="/contact"
+      to={fabHref}
       className="fab"
       style={{
         opacity: isVisible ? 1 : 0,

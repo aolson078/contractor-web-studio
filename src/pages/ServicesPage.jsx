@@ -286,7 +286,7 @@ function ServicesPage() {
                 <li>1 round of design revisions</li>
                 <li>30 days support</li>
               </ul>
-              <Link to={packageQuoteLinks['get-found']} className="btn btn--outline">Get Started</Link>
+              <Link to={packageQuoteLinks['get-found']} className="btn btn--outline">Get a Free Quote</Link>
             </div>
 
             {/* Tier 2 - Featured */}
@@ -305,7 +305,7 @@ function ServicesPage() {
                 <li>2 rounds of design revisions</li>
                 <li>60 days support</li>
               </ul>
-              <Link to={packageQuoteLinks['never-miss']} className="btn btn--primary">Get Started</Link>
+              <Link to={packageQuoteLinks['never-miss']} className="btn btn--primary">Get a Free Quote</Link>
             </div>
 
             {/* Tier 3 */}
@@ -322,7 +322,7 @@ function ServicesPage() {
                 <li>2 rounds + copy assistance</li>
                 <li>90 days support + 1-hour training</li>
               </ul>
-              <Link to={packageQuoteLinks['grow-autopilot']} className="btn btn--outline">Get Started</Link>
+              <Link to={packageQuoteLinks['grow-autopilot']} className="btn btn--outline">Get a Free Quote</Link>
             </div>
           </div>
         </div>
@@ -339,7 +339,7 @@ function ServicesPage() {
               to find the best fit for your business.
             </p>
           </div>
-          <Link to={midPageQuoteHref} className="btn btn--primary">Let's Talk</Link>
+          <a href="https://cal.com/contractor-web-studio/15min" target="_blank" rel="noopener noreferrer" className="btn btn--primary">Book a 15-Min Call</a>
         </div>
       </section>
 
@@ -597,7 +597,7 @@ function ServicesPage() {
           </p>
           <div className="cta-btns">
             <Link to={footerQuoteHref} className="btn btn--primary">Get a Free Quote</Link>
-            <Link to={footerQuestionHref} className="btn btn--outline">Ask a Question</Link>
+            <a href="https://cal.com/contractor-web-studio/15min" target="_blank" rel="noopener noreferrer" className="btn btn--outline">Book a 15-Min Call</a>
           </div>
         </div>
       </section>

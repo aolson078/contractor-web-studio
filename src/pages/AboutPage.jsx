@@ -1,10 +1,16 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { buildTrackedContactPath } from '../utils/leadAttribution';
 
 function AboutPage() {
   useEffect(() => {
     document.title = 'About Alex Olson | Contractor Web Studio';
   }, []);
+
+  const footerQuoteHref = buildTrackedContactPath({
+    lead_source: 'about',
+    campaign: 'about_footer_quote',
+  });
 
   return (
     <>
@@ -171,7 +177,7 @@ function AboutPage() {
             like to hear from you. Free consultation, no strings attached.
           </p>
           <div className="cta-btns">
-            <Link to="/contact" className="btn btn--primary">
+            <Link to={footerQuoteHref} className="btn btn--primary">
               Get a Free Quote
             </Link>
             <Link to="/portfolio" className="btn btn--outline">

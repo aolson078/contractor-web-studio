@@ -308,7 +308,7 @@ function HomePage() {
           </p>
           <div className="cta-btns">
             <Link to={footerQuoteHref} className="btn btn--primary">Get a Free Quote</Link>
-            <a href="tel:+13175901373" className="btn btn--outline">Call Me Directly</a>
+            <a href="https://cal.com/contractor-web-studio/15min" target="_blank" rel="noopener noreferrer" className="btn btn--outline">Book a 15-Min Call</a>
           </div>
         </div>
       </section>

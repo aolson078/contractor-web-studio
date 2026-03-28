@@ -2,11 +2,21 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MockupBrowser from '../components/MockupBrowser';
 import portfolioData from '../data/portfolioData';
+import { buildTrackedContactPath } from '../utils/leadAttribution';
 
 function PortfolioPage() {
   useEffect(() => {
     document.title = 'Portfolio & Case Studies | Contractor Web Studio';
   }, []);
+
+  const footerQuoteHref = buildTrackedContactPath({
+    lead_source: 'portfolio',
+    campaign: 'portfolio_footer_quote',
+  });
+  const footerCallHref = buildTrackedContactPath({
+    lead_source: 'portfolio',
+    campaign: 'portfolio_footer_call',
+  });
 
   return (
     <>
@@ -423,12 +433,12 @@ function PortfolioPage() {
             contracting business. Free consultation, no pressure.
           </p>
           <div className="cta-btns">
-            <Link to="/contact" className="btn btn--primary">
+            <Link to={footerQuoteHref} className="btn btn--primary">
               Get a Free Quote
             </Link>
-            <Link to="/services" className="btn btn--outline">
-              View Services
-            </Link>
+            <a href="https://cal.com/contractor-web-studio/15min" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+              Book a 15-Min Call
+            </a>
           </div>
         </div>
       </section>
