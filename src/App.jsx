@@ -14,6 +14,9 @@ import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import AdminPage from './pages/AdminPage';
 import LandingPage from './pages/LandingPage';
 import AuditPage from './pages/AuditPage';
+import PricingGuidePage from './pages/PricingGuidePage';
+import ComparisonWixPage from './pages/ComparisonWixPage';
+import ComparisonWordPressPage from './pages/ComparisonWordPressPage';
 import landingPages from './data/landingPages';
 import audits from './data/auditTemplate';
 import { captureLeadAttribution, buildTrackedContactPath } from './utils/leadAttribution';
@@ -164,6 +167,9 @@ function App() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/payment-success" element={<PaymentSuccessPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/contractor-website-pricing" element={<PricingGuidePage />} />
+          <Route path="/contractor-websites-vs-wix" element={<ComparisonWixPage />} />
+          <Route path="/contractor-websites-vs-wordpress" element={<ComparisonWordPressPage />} />
           {landingPages.map((page) => (
             <Route
               key={page.slug}
