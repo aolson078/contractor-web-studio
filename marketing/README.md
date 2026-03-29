@@ -84,6 +84,7 @@ The system should:
 - `sales-handoff.md`: booked call to proposal workflow
 - `measurement.md`: KPIs, review cadence, targets
 - `outbound-warmup-tracker.md`: daily and weekly outbound deliverability tracker
+- `weekly-review-template.md`: structured weekly review combining all metrics and decisions
 - `assets/`: reusable copy, rules, and schemas
 
 ## Weekly Operating Checklist
