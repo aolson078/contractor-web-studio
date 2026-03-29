@@ -78,10 +78,12 @@ The system should:
 - `local-presence-engine.md`: Google Business Profile and local trust system
 - `proof-engine.md`: case study, testimonial, screenshot, and proof rules
 - `deliverability-compliance.md`: outbound sending rules and compliance
+- `deliverability-setup-guide.md`: DNS, domain, mailbox, and warm-up setup instructions
 - `lead-research-sop.md`: how to build the weekly prospect list
 - `revops-automation.md`: pipeline, source taxonomy, SLAs, automation logic
 - `sales-handoff.md`: booked call to proposal workflow
 - `measurement.md`: KPIs, review cadence, targets
+- `outbound-warmup-tracker.md`: daily and weekly outbound deliverability tracker
 - `assets/`: reusable copy, rules, and schemas
 
 ## Weekly Operating Checklist
