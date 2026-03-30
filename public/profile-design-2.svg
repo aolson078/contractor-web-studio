@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F1623"/>
+      <stop offset="100%" stop-color="#1B2A4A"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E87C3E"/>
+      <stop offset="100%" stop-color="#F09A64"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="80" fill="url(#bg2)"/>
+
+  <!-- Blueprint grid pattern -->
+  <g stroke="#223357" stroke-width="0.5" opacity="0.25">
+    <line x1="0" y1="128" x2="512" y2="128"/>
+    <line x1="0" y1="256" x2="512" y2="256"/>
+    <line x1="0" y1="384" x2="512" y2="384"/>
+    <line x1="128" y1="0" x2="128" y2="512"/>
+    <line x1="256" y1="0" x2="256" y2="512"/>
+    <line x1="384" y1="0" x2="384" y2="512"/>
+  </g>
+
+  <!-- Stylized "B" letterform made of building blocks -->
+  <!-- Vertical bar of B -->
+  <rect x="140" y="100" width="56" height="312" rx="4" fill="#F5F1EB"/>
+
+  <!-- Top bump of B -->
+  <rect x="196" y="100" width="100" height="56" rx="4" fill="#F5F1EB"/>
+  <rect x="270" y="100" width="56" height="136" rx="4" fill="#F5F1EB"/>
+  <rect x="196" y="208" width="100" height="28" rx="4" fill="#F5F1EB"/>
+
+  <!-- Bottom bump of B (larger) -->
+  <rect x="196" y="244" width="120" height="56" rx="4" fill="url(#orangeGrad)"/>
+  <rect x="290" y="244" width="56" height="168" rx="4" fill="url(#orangeGrad)"/>
+  <rect x="196" y="356" width="120" height="56" rx="4" fill="url(#orangeGrad)"/>
+
+  <!-- Small construction detail: wrench/tool icon -->
+  <g transform="translate(390, 90) rotate(45)" opacity="0.6">
+    <rect x="0" y="0" width="8" height="50" rx="4" fill="#E87C3E"/>
+    <circle cx="4" cy="0" r="12" fill="none" stroke="#E87C3E" stroke-width="4"/>
+  </g>
+
+  <!-- "STUDIO" subtitle -->
+  <text x="256" y="478" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="400" fill="#A0A8B8" letter-spacing="12">STUDIO</text>
+
+  <!-- Border accent -->
+  <rect x="8" y="8" width="496" height="496" rx="74" fill="none" stroke="#E87C3E" stroke-width="2" opacity="0.2"/>
+</svg>
