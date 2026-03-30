@@ -13,6 +13,7 @@ import ThankYouPage from './pages/ThankYouPage';
 import PaymentSuccessPage from './pages/PaymentSuccessPage';
 import AdminPage from './pages/AdminPage';
 import LandingPage from './pages/LandingPage';
+import ProfilePreviewPage from './pages/ProfilePreviewPage';
 import landingPages from './data/landingPages';
 import { captureLeadAttribution } from './utils/leadAttribution';
 
@@ -157,6 +158,7 @@ function App() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/payment-success" element={<PaymentSuccessPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/profile-preview" element={<ProfilePreviewPage />} />
           {landingPages.map((page) => (
             <Route
               key={page.slug}
