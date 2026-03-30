@@ -4,7 +4,7 @@ import { getContactPrefill } from '../utils/contactPrefill';
 import { getResolvedAttribution } from '../utils/leadAttribution';
 
 const serviceOptions = [
-  { value: 'get-found', label: 'Get Found Online ($800-$1,500)' },
+  { value: 'get-found', label: 'Get Found Online ($1,500+)' },
   { value: 'never-miss', label: 'Never Miss a Lead ($2,000-$3,500)' },
   { value: 'grow-autopilot', label: 'Grow on Autopilot ($4,000-$6,000)' },
   { value: 'not-sure', label: 'Not sure yet' },

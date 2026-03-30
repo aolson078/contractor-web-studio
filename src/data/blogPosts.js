@@ -81,7 +81,7 @@ Every day, people in your area are searching Google for the exact service you pr
 
 Let's put some numbers on it. Say just 5 people a month search for your service in your area and would have called you if they'd found your site. If your average job is worth $3,000, that's $15,000 a month in potential revenue you're leaving on the table. Over a year? $180,000. Even if you only close half of those leads, you're looking at $90,000 in lost business.
 
-Suddenly, an $800 website doesn't seem expensive. It seems like the best investment you could make.
+Suddenly, a $1,500 website doesn't seem expensive. It seems like the best investment you could make.
 
 The Credibility Problem
 
@@ -97,7 +97,7 @@ Think about it from the customer's perspective. You need your roof fixed. You fi
 
 What a Website Actually Costs vs. What It Earns
 
-A professional contractor website costs between $800 and $4,000 depending on what you need. That's a one-time investment. No monthly fees for the basic packages. No recurring charges.
+A professional contractor website costs between $1,500 and $4,000 depending on what you need. That's a one-time investment. No monthly fees for the basic packages. No recurring charges.
 
 If that website generates just one additional job per month (and most of my clients see results in the first two weeks), it pays for itself immediately. After that, every lead it generates is profit.
 

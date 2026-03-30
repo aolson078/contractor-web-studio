@@ -88,7 +88,7 @@ function ServicesPage() {
   });
 
   const packages = {
-    'get-found': { name: 'Get Found Online', price: 800 },
+    'get-found': { name: 'Get Found Online', price: 1500 },
     'never-miss': { name: 'Never Miss a Lead', price: 2000 },
     'grow-autopilot': { name: 'Grow on Autopilot', price: 4000 },
   };
@@ -275,7 +275,7 @@ function ServicesPage() {
             {/* Tier 1 */}
             <div className="pricing-card reveal-up stagger-1">
               <h3 className="pricing-card__name">Get Found Online</h3>
-              <div className="pricing-card__price">$800 - $1,500</div>
+              <div className="pricing-card__price">$1,500</div>
               <p className="pricing-card__price-note">2-3 week delivery</p>
               <ul className="pricing-card__features">
                 <li>3 pages (Home, Projects, Contact)</li>

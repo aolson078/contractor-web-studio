@@ -1,7 +1,7 @@
 import stripe from "stripe";
 
 export const PACKAGE_PRICING = {
-  "get-found": { name: "Get Found Online", price: 800 },
+  "get-found": { name: "Get Found Online", price: 1500 },
   "never-miss": { name: "Never Miss a Lead", price: 2000 },
   "grow-autopilot": { name: "Grow on Autopilot", price: 4000 },
 };
