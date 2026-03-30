@@ -20,7 +20,7 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
-    document.title = 'Contractor Websites Starting at $800 | Contractor Web Studio';
+    document.title = 'Contractor Websites Starting at $1,500 | Contractor Web Studio';
   }, []);
 
   // Auto-rotate testimonials every 6 seconds
@@ -90,7 +90,7 @@ function HomePage() {
             <div className="stat__label">Average Delivery</div>
           </div>
           <div className="stat">
-            <div className="stat__number">$800+</div>
+            <div className="stat__number">$1,500+</div>
             <div className="stat__label">Starting Price</div>
           </div>
           <div className="stat">
@@ -156,7 +156,7 @@ function HomePage() {
               </div>
               <h3>Get Found Online</h3>
               <p className="svc-card__desc">
-                $800 - $1,500 &middot; A clean 3-page site with a contact form and
+                $1,500+ &middot; A clean 3-page site with a contact form and
                 basic SEO so customers can actually find you on Google.
               </p>
             </div>
