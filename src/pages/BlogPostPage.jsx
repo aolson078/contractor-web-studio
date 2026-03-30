@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import blogPosts from '../data/blogPosts';
+import { buildTrackedContactPath } from '../utils/leadAttribution';
 
 function BlogPostPage() {
   const { slug } = useParams();
@@ -119,12 +120,12 @@ function BlogPostPage() {
             contracting business.
           </p>
           <div className="cta-btns">
-            <Link to="/contact" className="btn btn--primary">
+            <Link to={buildTrackedContactPath({ lead_source: 'blog', campaign: `blog_${slug}` })} className="btn btn--primary">
               Get a Free Quote
             </Link>
-            <Link to="/blog" className="btn btn--outline">
-              More Articles
-            </Link>
+            <a href="https://cal.com/contractor-web-studio/15min" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+              Book a 15-Min Call
+            </a>
           </div>
         </div>
       </section>
