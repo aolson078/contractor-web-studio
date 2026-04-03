@@ -27,7 +27,7 @@ function BlogPostPage() {
 
   if (!post) {
     return (
-      <section className="section" style={{ paddingTop: '10rem', textAlign: 'center' }}>
+      <section className="section section--page-top" style={{ textAlign: 'center' }}>
         <div className="container">
           <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', marginBottom: '1.5rem' }}>
             Post Not Found
@@ -58,7 +58,7 @@ function BlogPostPage() {
   return (
     <>
       {/* Post Header */}
-      <section className="section" style={{ paddingTop: '10rem' }}>
+      <section className="section section--page-top">
         <div className="container container--narrow">
           <div className="reveal-up">
             <Link to="/blog" className="blog-post__back">

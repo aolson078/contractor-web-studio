@@ -11,7 +11,7 @@ function PortfolioPage() {
   return (
     <>
       {/* ── Page Header ── */}
-      <section className="section" style={{ paddingTop: '10rem' }}>
+      <section className="section section--page-top">
         <div className="container">
           <div className="section__header section__header--center reveal-up">
             <span className="section__eyebrow">PORTFOLIO</span>

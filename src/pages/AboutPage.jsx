@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <>
       {/* ── Page Header ── */}
-      <section className="section" style={{ paddingTop: '10rem' }}>
+      <section className="section section--page-top">
         <div className="container">
           <div className="section__header section__header--center reveal-up">
             <span className="section__eyebrow">ABOUT</span>
@@ -45,9 +45,12 @@ function AboutPage() {
 
             <div className="reveal-up stagger-1">
               <div className="about-portrait">
-                <div className="about-portrait__monogram">
-                  <div className="about-portrait__letter">A</div>
-                  <div className="about-portrait__label">Web Developer</div>
+                <div className="about-portrait__avatar">
+                  <div className="about-portrait__initials">AO</div>
+                </div>
+                <div className="about-portrait__info">
+                  <div className="about-portrait__name">Alex Olson</div>
+                  <div className="about-portrait__role">Founder, Contractor Web Studio</div>
                 </div>
               </div>
             </div>

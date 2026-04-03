@@ -23,8 +23,9 @@ function HomePage() {
     document.title = 'Contractor Websites Starting at $1,500 | Contractor Web Studio';
   }, []);
 
-  // Auto-rotate testimonials every 6 seconds
+  // Auto-rotate testimonials every 6 seconds (skip if only 1)
   useEffect(() => {
+    if (testimonials.length <= 1) return;
     const interval = setInterval(nextTestimonial, 6000);
     return () => clearInterval(interval);
   }, [nextTestimonial]);
@@ -68,6 +69,7 @@ function HomePage() {
               <Link to={heroQuoteHref} className="btn btn--primary">Get a Free Quote</Link>
               <Link to="/portfolio" className="btn btn--outline">See My Work</Link>
             </div>
+            <p className="hero__proof">1 client launched. Custom-coded, fully owned, zero platform fees.</p>
           </div>
 
           <div className="hero__visual">
@@ -78,38 +80,43 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Stats Band ── */}
+      {/* ── Stats + Trust Band ── */}
       <section className="stats-band">
         <div className="container stats-band__inner">
-          <div className="stat">
-            <div className="stat__number">100%</div>
-            <div className="stat__label">Mobile Responsive</div>
+          <div className="stats-band__row">
+            <div className="stat">
+              <div className="stat__number">100%</div>
+              <div className="stat__label">Mobile Responsive</div>
+            </div>
+            <div className="stat">
+              <div className="stat__number">2-3 Weeks</div>
+              <div className="stat__label">Average Delivery</div>
+            </div>
+            <div className="stat">
+              <div className="stat__number">$1,500+</div>
+              <div className="stat__label">Starting Price</div>
+            </div>
+            <div className="stat">
+              <div className="stat__number">24/7</div>
+              <div className="stat__label">Your Site Works For You</div>
+            </div>
           </div>
-          <div className="stat">
-            <div className="stat__number">2-3 Weeks</div>
-            <div className="stat__label">Average Delivery</div>
-          </div>
-          <div className="stat">
-            <div className="stat__number">$1,500+</div>
-            <div className="stat__label">Starting Price</div>
-          </div>
-          <div className="stat">
-            <div className="stat__number">24/7</div>
-            <div className="stat__label">Your Site Works For You</div>
+          <div className="stats-band__row stats-band__row--trust">
+            <div className="stat stat--trust">
+              <div className="stat__trust-label">Custom Code Only</div>
+            </div>
+            <div className="stat stat--trust">
+              <div className="stat__trust-label">You Own Everything</div>
+            </div>
+            <div className="stat stat--trust">
+              <div className="stat__trust-label">No Platform Fees</div>
+            </div>
+            <div className="stat stat--trust">
+              <div className="stat__trust-label">30-Day Support</div>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* ── Trust Badges ── */}
-      <div className="trust-badges">
-        <div className="container">
-          <div className="trust-badges__inner">
-            <span className="trust-badges__item">100% Custom Code</span>
-            <span className="trust-badges__item">Google Business Profile Included</span>
-            <span className="trust-badges__item">30-Day Support</span>
-          </div>
-        </div>
-      </div>
 
       {/* ── Problem Section ── */}
       <section className="section section--dark">
@@ -269,6 +276,12 @@ function HomePage() {
       {/* ── Testimonials Carousel ── */}
       <section className="testi-section">
         <div className="container reveal-up">
+          <div className="testi-featured">
+            <blockquote className="testi-featured__quote">
+              Wolf Lake Masonry's website became their primary source of new project inquiries within 30 days of launch.
+            </blockquote>
+            <p className="testi-featured__attr">Wolf Lake Masonry Inc. &middot; Winston-Salem, NC</p>
+          </div>
           <div className="testi-carousel">
             {testimonials.map((t, i) => (
               <div
@@ -284,16 +297,18 @@ function HomePage() {
               </div>
             ))}
           </div>
-          <div className="testi-carousel__dots">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                className={`testi-carousel__dot ${i === activeTestimonial ? 'testi-carousel__dot--active' : ''}`}
-                onClick={() => setActiveTestimonial(i)}
-                aria-label={`View testimonial ${i + 1}`}
-              />
-            ))}
-          </div>
+          {testimonials.length > 1 && (
+            <div className="testi-carousel__dots">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  className={`testi-carousel__dot ${i === activeTestimonial ? 'testi-carousel__dot--active' : ''}`}
+                  onClick={() => setActiveTestimonial(i)}
+                  aria-label={`View testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

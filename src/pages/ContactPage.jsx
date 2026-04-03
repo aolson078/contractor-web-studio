@@ -139,7 +139,7 @@ function ContactPage() {
   return (
     <main>
       {/* Page Header */}
-      <section className="section" style={{ paddingTop: '10rem' }}>
+      <section className="section section--page-top">
         <div className="container">
           <div className="section__header section__header--center">
             <span className="section__eyebrow">Contact</span>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function PaymentSuccessPage() {
   return (
     <>
-      <section className="section" style={{ paddingTop: '10rem' }}>
+      <section className="section section--page-top">
         <div className="container">
           <div className="section__header section__header--center">
             <span className="section__eyebrow">PAYMENT CONFIRMED</span>

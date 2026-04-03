@@ -116,7 +116,7 @@ function AdminPage() {
   // Login gate
   if (!authenticated) {
     return (
-      <section className="section" style={{ paddingTop: '10rem', minHeight: '80vh' }}>
+      <section className="section section--page-top" style={{ minHeight: '80vh' }}>
         <div className="container" style={{ maxWidth: '400px', margin: '0 auto' }}>
           <div className="contact-form">
             <h2 style={{ marginBottom: '0.5rem', textAlign: 'center' }}>Admin Dashboard</h2>

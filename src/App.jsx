@@ -167,7 +167,7 @@ function App() {
             />
           ))}
           <Route path="*" element={
-            <section className="section" style={{ paddingTop: '10rem', textAlign: 'center' }}>
+            <section className="section section--page-top" style={{ textAlign: 'center' }}>
               <div className="container">
                 <h1 style={{ fontSize: 'clamp(2rem, 6vw, 3.5rem)', marginBottom: '1.5rem' }}>Page Not Found</h1>
                 <p className="section__desc" style={{ margin: '0 auto 2rem' }}>The page you're looking for doesn't exist.</p>
