@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /thank-you
 Disallow: /payment-success
 
-Sitemap: https://contractorwebstudio.com/sitemap.xml
+Sitemap: https://buildzenstudio.com/sitemap.xml

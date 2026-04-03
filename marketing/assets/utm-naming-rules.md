@@ -40,4 +40,4 @@ Use `utm_content` when testing variants.
 
 ## Example URL
 
-`https://contractorwebstudio.com/contact?utm_source=cold_email&utm_medium=email&utm_campaign=q2_masonry_outbound&utm_content=email_1`
+`https://buildzenstudio.com/contact?utm_source=cold_email&utm_medium=email&utm_campaign=q2_masonry_outbound&utm_content=email_1`

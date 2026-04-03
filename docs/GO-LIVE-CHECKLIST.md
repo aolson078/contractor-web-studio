@@ -1,12 +1,12 @@
 # Go-Live Checklist
 
-Everything you need to do before launching contractorwebstudio.com.
+Everything you need to do before launching buildzenstudio.com.
 
 ---
 
 ## 1. Domain & Hosting
 
-- [ ] Purchase domain `contractorwebstudio.com` (Namecheap, Google Domains, etc.)
+- [ ] Purchase domain `buildzenstudio.com` (Namecheap, Google Domains, etc.)
 - [ ] Connect your GitHub repo to Netlify (it will auto-deploy on push)
 - [ ] Add your custom domain in Netlify: Site settings > Domain management > Add custom domain
 - [ ] Enable HTTPS (Netlify does this automatically once DNS propagates)
@@ -26,7 +26,7 @@ Add each of these. The site works without them, but features will be disabled un
 - [ ] Verify your sending domain (or use their default)
 - [ ] Create an API key
 - [ ] Set `RESEND_API_KEY` = your Resend API key
-- [ ] Set `FROM_EMAIL` = your verified sender email (e.g., `alex@contractorwebstudio.com`)
+- [ ] Set `FROM_EMAIL` = your verified sender email (e.g., `alex@buildzenstudio.com`)
 
 ### Slack/Discord Notifications
 
@@ -49,7 +49,7 @@ Add each of these. The site works without them, but features will be disabled un
 - [ ] Get your Secret Key from Developers > API keys
 - [ ] Set `STRIPE_SECRET_KEY` = `sk_live_...` (use `sk_test_...` for testing first)
 - [ ] Create a webhook endpoint in Stripe: Developers > Webhooks > Add endpoint
-  - URL: `https://contractorwebstudio.com/.netlify/functions/stripe-webhook`
+  - URL: `https://buildzenstudio.com/.netlify/functions/stripe-webhook`
   - Events to listen for: `checkout.session.completed`
 - [ ] Set `STRIPE_WEBHOOK_SECRET` = `whsec_...` (shown after creating the webhook)
 
@@ -78,7 +78,7 @@ Add each of these. The site works without them, but features will be disabled un
 ## 4. Analytics (Plausible)
 
 - [ ] Sign up at <https://plausible.io> (free 30-day trial, then $9/mo) OR self-host for free
-- [ ] Add your domain `contractorwebstudio.com`
+- [ ] Add your domain `buildzenstudio.com`
 - [ ] The script tag is already in `index.html` -- no code changes needed
 
 Alternative: If you prefer Google Analytics (free), replace the Plausible script in `index.html` with the GA4 gtag snippet and add route tracking in `App.jsx`.

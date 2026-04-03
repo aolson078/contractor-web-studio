@@ -220,7 +220,7 @@ async function sendLeadAutoResponse({ name, email, service }) {
         </div>
 
         <div style="text-align: center;">
-          <a href="https://contractorwebstudio.com/portfolio" style="color: #E87C3E; font-size: 14px; text-decoration: underline;">View my portfolio</a>
+          <a href="https://buildzenstudio.com/portfolio" style="color: #E87C3E; font-size: 14px; text-decoration: underline;">View my portfolio</a>
         </div>
       </div>
 

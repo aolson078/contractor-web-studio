@@ -55,7 +55,7 @@ export async function handler(event) {
   }
 
   const stripeClient = stripe(STRIPE_SECRET_KEY);
-  const SITE_URL = process.env.URL || "https://contractorwebstudio.com";
+  const SITE_URL = process.env.URL || "https://buildzenstudio.com";
 
   try {
     const payload = JSON.parse(event.body || "{}");
