@@ -1,11 +1,9 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MockupBrowser from '../components/MockupBrowser';
-import testimonials from '../data/testimonials';
 import { buildTrackedContactPath } from '../utils/leadAttribution';
 
 function HomePage() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const heroQuoteHref = buildTrackedContactPath({
     lead_source: 'homepage',
     campaign: 'home_hero_quote',
@@ -15,20 +13,9 @@ function HomePage() {
     campaign: 'home_footer_quote',
   });
 
-  const nextTestimonial = useCallback(() => {
-    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  }, []);
-
   useEffect(() => {
     document.title = 'Contractor Websites Starting at $1,500 | Contractor Web Studio';
   }, []);
-
-  // Auto-rotate testimonials every 6 seconds (skip if only 1)
-  useEffect(() => {
-    if (testimonials.length <= 1) return;
-    const interval = setInterval(nextTestimonial, 6000);
-    return () => clearInterval(interval);
-  }, [nextTestimonial]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -273,44 +260,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonials Carousel ── */}
-      <section className="testi-section">
-        <div className="container reveal-up">
-          <div className="testi-featured">
-            <blockquote className="testi-featured__quote">
-              Wolf Lake Masonry's website became their primary source of new project inquiries within 30 days of launch.
-            </blockquote>
-            <p className="testi-featured__attr">Wolf Lake Masonry Inc. &middot; Winston-Salem, NC</p>
-          </div>
-          <div className="testi-carousel">
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className={`testi-carousel__slide ${i === activeTestimonial ? 'testi-carousel__slide--active' : ''}`}
-              >
-                <span className="testi__mark">"</span>
-                <blockquote className="testi-quote">{t.quote}</blockquote>
-                <div className="testi__rule" />
-                <p className="testi-attr">
-                  {t.name} - {t.location}
-                </p>
-              </div>
-            ))}
-          </div>
-          {testimonials.length > 1 && (
-            <div className="testi-carousel__dots">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  className={`testi-carousel__dot ${i === activeTestimonial ? 'testi-carousel__dot--active' : ''}`}
-                  onClick={() => setActiveTestimonial(i)}
-                  aria-label={`View testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* ── CTA Section ── */}
       <section className="cta-section">

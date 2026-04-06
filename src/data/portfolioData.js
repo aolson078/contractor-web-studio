@@ -24,11 +24,7 @@ const portfolioData = [
       { number: '1992', label: 'Est.' },
     ],
     techTags: ['React 18', 'Vite 5', 'Netlify Forms', 'Sharp', 'GA4'],
-    testimonial: {
-      quote:
-        'Alex built us a site that actually looks like our work. Solid, clean, and professional. We started getting calls the first week it went live.',
-      attribution: 'Wolf Lake Masonry',
-    },
+    testimonial: null,
     mockupVariant: 'masonry',
     screenshots: {
       landing: '/portfolio/wolf-lake/Landing Page.png',
