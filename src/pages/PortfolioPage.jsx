@@ -259,18 +259,6 @@ function PortfolioPage() {
         </div>
       </section>
 
-      {/* ── Testimonial ── */}
-      <section className="testi-section">
-        <div className="container reveal-up">
-          <span className="testi__mark">"</span>
-          <blockquote className="testi-quote">
-            Alex built us a site that actually looks like our work. Solid, clean,
-            and professional. We started getting calls the first week it went live.
-          </blockquote>
-          <div className="testi__rule" />
-          <p className="testi-attr">Wolf Lake Masonry</p>
-        </div>
-      </section>
 
       {/* ── More Projects ── */}
       <section className="section">
